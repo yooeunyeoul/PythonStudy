@@ -71,8 +71,29 @@ def make1():
     print(count)
 
 
+def make1Answer():
+    result = 0
+
+    n = 25
+    k = 3
+
+    while n >= k:
+        while n % k != 0:
+            n -= 1
+            result += 1
+
+        n //= k
+        result += 1
+
+    while n > 1:
+        n -= 1
+        result += 1
+
+    print(result)
+
+
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
-    make1()
+    make1Answer()
 
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/
