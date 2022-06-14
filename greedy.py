@@ -69,45 +69,59 @@ def 그리디문제():
 # 값을 뺏을 때 3의 배수인지 5의 배수인지 체크하는 함수를 재귀로 만들면 됨
 
 
-def 재귀함수_3을_뺐을때_5를_뺐을때_최소값(minusNumber, n):
-    moc = 0
+# 26
+# 26에서 5를 뺀다 -->
+# 5의 배수의거나 3의 배수인가??
 
-    minusedNumber = n - minusNumber
+# 맞다면 -->
+#  아니라면 --> 26에서 3을 뺀다 -->
+# 5의 배수이거나 3의 배수인가?
 
-    moc += 1
+#  맞다면 --> 23에서 5를 뺀다 -->
+#  아니라면 --> -1 출력
 
-    if minusedNumber % 5 == 0:
-        moc = minusedNumber / 5 + moc
-        return moc
+def 재귀함수_3을_뺐을때_5를_뺐을때_최소값(n):
+    minusedCount = 0
+    minusedNumber = n
 
-    elif minusedNumber % 3 == 0:
-        moc = minusedNumber / 3 + moc
-        return moc
+    while minusedNumber != 0:
+        minusedFive = minusedNumber - 5
+        minusedThree = minusedNumber - 3
+        if minusedFive % 5 == 0 or minusedFive % 3 == 0:
+            minusedNumber = minusedFive
+            minusedCount += 1
+            continue
+        elif minusedThree % 5 == 0 or minusedThree % 3 == 0:
+            minusedNumber = minusedThree
+            minusedCount += 1
+            continue
+        else:
+            minusedCount = -1
+            break
 
-    else:
-        return 1100
+    return minusedCount
+
+
+def three(sugar, count):
+    if sugar % 3 != 0:
+        three(sugar + 5, count - 1)
+    elif sugar % 3 == 0:
+        count += sugar // 3
+        print(count)
+
 
 
 if __name__ == '__main__':
     # print_hi("ㅇㅏㄴ녕" ';')
-    saltsBox = [3, 5]
-    minCount = 0
+    sugar = 2
 
-    n = 26
-
-    # 21 6 + 15
-
-    # 21 -3 = 18 -3 = 15 -5 10 -5 5 -5 0
-
-    list = []
-
-    for salt in saltsBox:
-        num = 재귀함수_3을_뺐을때_5를_뺐을때_최소값(salt, n)
-        heapq.heappush(list, int(num))
-
-    print(list)
-    if(list[0] == 1100):
-        print(-1)
+    bag = 0
+    while sugar >= 0:
+        if sugar % 5 == 0:  # 5의 배수이면
+            bag += (sugar // 5)  # 5로 나눈 몫을 구해야 정수가 됨
+            print(bag)
+            break
+        sugar -= 3
+        bag += 1  # 5의 배수가 될 때까지 설탕-3, 봉지+1
     else:
-        print(list[0])
-
+        print(-1)
