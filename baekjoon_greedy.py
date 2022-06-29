@@ -55,6 +55,27 @@ def 백준_1541():
     print("")
 
 
+def 백준_2217():
+    print("")
+
+##풀이
+## 반복문 횟수를 늘려나가면서 최소값과 곱해나가면 그 무게가 최대 출력값이 됨
+## 2
+## 10
+## 15
+##출력은 20
+
+## 반복문 돌림
+## 입력값 = [10 , 15]
+## sort 역순으로 함
+## [15, 10]
+## i == 0 일때  1x 15  ==> (i+1) x list[i]  == > 15
+## i == 1 일때  2x10   ==> (i+1) x list[i]  == > 20
+## max 를 써서 최대값을 구하면 됨
+
+
+
+
 def 백준_5585():
     money = 1000
     price = 1
@@ -69,11 +90,11 @@ def 백준_5585():
                 moc = int(changeMoney / i)
                 changeMoney = changeMoney % i
 
-                result+=moc
+                result += moc
                 break
 
-
     print(result)
+
 
 def Answer():
     result = 0
