@@ -51,6 +51,30 @@ def 백준_1931():
     print(count)
 
 
+def 백준_1541():
+    print("")
+
+
+def 백준_5585():
+    money = 1000
+    price = 1
+    change = [500, 100, 50, 10, 5, 1]
+    result = 0
+
+    changeMoney = money - price  ##620
+
+    while changeMoney != 0:
+        for i in change:
+            if i < changeMoney:
+                moc = int(changeMoney / i)
+                changeMoney = changeMoney % i
+
+                result+=moc
+                break
+
+
+    print(result)
+
 def Answer():
     result = 0
 
@@ -96,7 +120,7 @@ def CoinAnswer():
 
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
-    백준_1931()
+    백준_5585()
 
 #  이 모든 값을 더한다.
 
