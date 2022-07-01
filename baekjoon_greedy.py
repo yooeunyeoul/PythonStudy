@@ -58,6 +58,14 @@ def 백준_1541():
 def 백준_2217():
     print("")
 
+    n = int(input(""))
+    list = [0 for i in range(n)]
+
+
+    for i in range(0,n):
+        list[i] = int(input(""))
+
+
 ##풀이
 ## 반복문 횟수를 늘려나가면서 최소값과 곱해나가면 그 무게가 최대 출력값이 됨
 ## 2
@@ -72,8 +80,6 @@ def 백준_2217():
 ## i == 0 일때  1x 15  ==> (i+1) x list[i]  == > 15
 ## i == 1 일때  2x10   ==> (i+1) x list[i]  == > 20
 ## max 를 써서 최대값을 구하면 됨
-
-
 
 
 def 백준_5585():
@@ -141,7 +147,7 @@ def CoinAnswer():
 
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
-    백준_5585()
+    백준_2217()
 
 #  이 모든 값을 더한다.
 
