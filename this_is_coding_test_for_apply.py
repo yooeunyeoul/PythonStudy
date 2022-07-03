@@ -33,5 +33,18 @@ def 체크함수4_1(n, position):
         return -1
 
 
+def 예제4_2시각():
+    n = 3
+
+    count = 0
+    for i in range(n + 1):
+        for j in range(60):
+            for p in range(60):
+                if '3' in str(i) or '3' in str(j) or '3' in str(p):
+                    count += 1
+                else:
+                    continue
+
+
 if __name__ == '__main__':
-    이것이_취업을위한_코테다_예제_4_1_상하좌우()
+    예제4_2시각()
